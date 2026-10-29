@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 app.use(express.json());
 
@@ -90,6 +90,6 @@ res.status(500).json({
 }
 });
 
-app.listen(PORT, () => {
-console.log(`NEW WORLD API server running at http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`NEW WORLD API server running on port ${PORT}`);
 });

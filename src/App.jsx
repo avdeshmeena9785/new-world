@@ -604,7 +604,10 @@ export default function App() {
         params.set("q", query);
       }
 
-      const response = await fetch(`/api/news?${params.toString()}`);
+     const response = await fetch(
+`https://new-world-api-jqp9.onrender.com/api/news?${params.toString()}`
+);
+
 
       if (!response.ok) {
         throw new Error("News API is not connected");

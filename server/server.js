@@ -1,12 +1,21 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 4000;
 
+app.use(cors({
+origin: [
+"https://new-world-pi-livid.vercel.app",
+"http://localhost:5173"
+]
+}));
+
 app.use(express.json());
+
 
 const categoryMap = {
 "Top News": "general",
